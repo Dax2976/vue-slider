@@ -16,7 +16,7 @@ img{
 
 .row{
     display: flex;
-    height: 700px;
+    height: 680px;
 }
 
 .img_container,
@@ -60,7 +60,7 @@ img{
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
-    z-index: -1;
+    z-index: 2;
     background-color: lightgray;
     border-radius: 50%;
     height: 35px;
@@ -69,16 +69,16 @@ img{
 }
 
 #upchevron{
-    top: 10%;
+    top: 3%;
 }
 
 #downchevron{
-    bottom: 5%;
+    bottom: -1%;
 }
 
 #up,
 #down{
-    line-height: 40px;
+    line-height: 37px;
     vertical-align: middle;
 }
 

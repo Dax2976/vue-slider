@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Slider</title>
     <link rel="stylesheet" href="./assets/js/css/style.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==' crossorigin='anonymous' referrerpolicy='no-referrer' />
 </head>
 <body>
@@ -22,11 +23,16 @@
                     </div>
                 </div>
                 <div id="carousel" class="w_20 col">
-                    <div id="upchevron" @click="upImg"><i class="fa-solid fa-chevron-up fa-2x" id="up"></i></div>
-                    <div id="downchevron" @click="downImg"><i class="fa-solid fa-chevron-down fa-2x" id="down"></i></div>
-                </div>
-                <div v-for="(photo,index) in photo" class="" :class="photo == index ? active : '' " :id="index">
-                    <img :src="photo.image" alt="">
+                    <div id="upchevron" @click="upImg">
+                        <i class="fa-solid fa-chevron-up fa-2x" id="up"></i>
+                    </div>
+                    <div id="downchevron" @click="downImg">
+                        <i class="fa-solid fa-chevron-down fa-2x" id="down"></i>
+                    </div>
+               
+                    <div class="" >
+                        <img :src="photo.image" alt="" v-for="(photo,index) in photo" :class="activeItem == index ? 'active' : '' " >
+                    </div>
                 </div>
             </div>
         </div>
