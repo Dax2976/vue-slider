@@ -34,18 +34,18 @@ const app = new Vue({
     },
     methods:{
         upImg(){
-            console.log(this.upImg)
-            if(this.activeItem === 0){
-                this.activeItem++
-            } else if(this.activeItem == 0){
-                this.activeItem = this.photo.lenght - 1
+            //console.log(this.upImg)
+            if(this.activeItem < this.photo.length){
+                this.activeItem--
+            }  else{
+                this.activeItem = 0
             }
         },
         downImg(){
-            if(this.activeItem === this.photo.lenght - 1){
+            if(this.activeItem < this.photo.length){
                 this.activeItem++
-            } else if(this.activeItem == this.photo.lenght - 1){
-                this.ac = 0
+            } else {
+                this.activeItem = 0
             }
         }
     }
