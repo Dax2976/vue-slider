@@ -9,6 +9,28 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==' crossorigin='anonymous' referrerpolicy='no-referrer' />
 </head>
 <body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="w_80 col">
+                    <div class="img_container">
+                        <img :src="photo[activeItem].image" alt="" class="img_first">
+                        <div class="text">
+                            <h2 class="photo_title">{{photo[activeItem].title}}</h2>
+                            <p class="description">{{photo[activeItem].text}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="carousel" class="w_20 col">
+                    <div id="upchevron" @click="upImg"><i class="fa-solid fa-chevron-up fa-2x" id="up"></i></div>
+                    <div id="downchevron" @click="downImg"><i class="fa-solid fa-chevron-down fa-2x" id="down"></i></div>
+                </div>
+                <div v-for="(photo,index) in photo" class="" :class="photo == index ? active : '' " :id="index">
+                    <img :src="photo.image" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
     
 
 
